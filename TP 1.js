@@ -5,7 +5,7 @@ function sum(a, b){
     return c
 }
 
-console.log(sum(1, 2))
+console.log(sum(1, 2));
 
 
 //2
@@ -63,7 +63,7 @@ function WriteNum(Numbers){
     const { NumberToLetter } = require("convertir-nombre-lettre");
     return NumberToLetter(Numbers);
 }
-console.log(WriteNum(41906789))
+console.log(WriteNum(6541906789))
 
 //version plus longue...(sans biblio)
 
@@ -79,14 +79,14 @@ function NumberToLetter(nombre, U=null, D=null) {
 
     nb = parseFloat(nombre.toString().replace(/ /gi, "")); //convertit nombres en chaine de caractère
     
-    n = nb.toString().length;
+    n = nb.toString().length; //renvoie la longuer de la caine de caractère qui représente l'objet
     switch (n) {
         case 1:
-            numberToLetter = letter[nb];
+            numberToLetter = letter[nb];        //assigne la chaine de caractère correspondante au chiffre/nombre compris entre 0 et 19
             break;
         case 2:
-            if (nb > 19) {
-                quotient = Math.floor(nb / 10);
+            if (nb > 19) {         //pour tout les nombres supérieurs à 19 ( et inférieurs à 100 - implicite) assigner et additionner les chaines de caratères correspondantes
+                quotient = Math.floor(nb / 10); 
                 reste = nb % 10;
                 if (nb < 71 || (nb > 79 && nb < 91)) {
                     if (reste == 0) numberToLetter = letter[quotient * 10];
