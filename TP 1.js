@@ -106,23 +106,26 @@ console.log(NumberToLetter(Numbe));
 
 //6
 
-const Equipe = [{ nom: " Jean ", age: " 27 ", poste: " Ingénieur " },  //On definit un tableau avec deux objects et leurs attributs respectifs
-    { nom: " Ben ", age: " 21 ", poste: " stagiaire "}];
-let pres
+const properties = [{            //on def notre tableau avec nos object et leurs propriétés
+    firstname: 'John',
+    lastname: 'Doe',
+    age: '27'
+},
+{
+    firstname: 'Ben',
+    lastname: 'Leripate',
+    age: '23'
+}];
 
-function propObj(array){
+function propObj(object, propName){               //on crée une boucle for qui va recup la propriété demandée et les stockées dans le tableau y
+    let y = []
+    for (let index = 0; index < object.length; index++) {
+        y[index] = object[index][propName]
+        
+    }return y
+}
 
-    function presentation(){          //met en pratique l'utilisation d'attributs du tableau les affichants avec des Chaines de caractère
-        pres = ("Je m'apelle" + this.nom + "j'ai" + this.age + "ans et je suis" + this.poste)
-    };
-
-    Equipe[0].presentation = presentation;         //on ajoute presentation aux ojects
-    Equipe[1].presentation = presentation;
-    Equipe[0].presentation();
-    return pres
-};
-
-console.log(propObj(Equipe));
+console.log(propObj(properties, 'firstname'))
 
 
 //7
