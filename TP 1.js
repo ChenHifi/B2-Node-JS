@@ -105,7 +105,25 @@ function NumberToLetter(nombre, U=null, D=null) {
 console.log(NumberToLetter(Numbe));
 
 //6
-//travaux en cours...
+function propObj(){
+    const Equipe = [{                  //On definit un tableau avec deux objects et leurs attributs respectifs
+        nom: " Jean ", age: " 27 ", poste: " Ingénieur " 
+    }, 
+    {
+        nom: " Ben ", age: " 21 ", poste: " stagiaire "
+    }];
+
+function presentation(){                //met en pratique l'utilisation d'attributs du tableau les affichants avec des Chaines de caractère
+    console.log("Je m'apelle" + this.nom + "j'ai" + this.age + "ans et je suis" + this.poste)
+};
+
+Equipe[0].presentation = presentation;            //on ajoute presentation aux ojects
+Equipe[1].presentation = presentation;
+Equipe[0].presentation();
+};
+
+console.log(propObj());
+
 
 //7
 Numb = [1, 7, 2, 10, 8];
